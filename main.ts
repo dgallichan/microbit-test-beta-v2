@@ -6,6 +6,10 @@ input.onButtonPressed(Button.A, function () {
     basic.showIcon(IconNames.Yes)
     dologdata = 1
 })
+input.onButtonPressed(Button.B, function () {
+    basic.showIcon(IconNames.No)
+    dologdata = 0
+})
 let dologdata = 0
 dologdata = 0
 basic.showIcon(IconNames.House)
