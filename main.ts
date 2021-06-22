@@ -1,23 +1,23 @@
 datalogger.onLogFull(function () {
-    dologdata = 0
+    dologdata = false
     basic.showIcon(IconNames.Skull)
 })
 input.onButtonPressed(Button.A, function () {
-    basic.showIcon(IconNames.Yes)
-    dologdata = 1
+    dologdata = !(dologdata)
 })
-input.onButtonPressed(Button.B, function () {
+input.onButtonPressed(Button.AB, function () {
     basic.showIcon(IconNames.No)
-    dologdata = 0
+    datalogger.deleteLog()
 })
-let dologdata = 0
-dologdata = 0
+let dologdata = false
+dologdata = false
+datalogger.setColumns(["a.x", "a.y", "a.z"])
 basic.showIcon(IconNames.House)
 basic.forever(function () {
 	
 })
 loops.everyInterval(100, function () {
-    if (dologdata == 1) {
+    if (dologdata) {
         datalogger.logData([
         datalogger.createCV("a.x", input.acceleration(Dimension.X)),
         datalogger.createCV("a.y", input.acceleration(Dimension.Y)),
