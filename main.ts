@@ -19,6 +19,6 @@ loops.everyInterval(100, function () {
         datalogger.createCV("a.y", input.acceleration(Dimension.Y)),
         datalogger.createCV("a.z", input.acceleration(Dimension.Z))
         ])
+        led.toggle(randint(0, 4), randint(0, 4))
     }
-    led.toggle(randint(0, 4), randint(0, 4))
 })
